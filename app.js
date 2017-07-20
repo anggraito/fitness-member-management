@@ -23,9 +23,6 @@ app.use(session({
 
 //app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function(req, res){
-  res.render('homepage');
-})
 
 var Member = require('./models/member');
 var Classname = require('./models/classname');
@@ -35,10 +32,12 @@ var member = require('./routers/member');
 var login = require('./routers/login');
 var signup = require('./routers/signup');
 var classname = require('./routers/classname');
+var homepage = require('./routers/homepage');
 
 app.use('/member', member);
 app.use('/classname', classname);
 app.use('/signup', signup);
-app.use('/', login);
+app.use('/login', login);
+app.use('/', homepage);
 
 app.listen(3500);
