@@ -15,7 +15,7 @@ router.post('/', function(req,res){
     role: req.body.role
   })
   .then(function(){
-    res.redirect('/')
+    res.redirect('/login')
   })
 })
 
