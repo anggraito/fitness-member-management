@@ -46,7 +46,7 @@ root.get('/delete/:id', function(req, res){
   })
 })
 
- root.get('/history/:id', function(req, res){
+root.get('/history/:id', function(req, res){
   Model.memberclass.findAll({
     where: {
       MemberId: req.params.id
@@ -71,11 +71,13 @@ root.get('/delete/:id', function(req, res){
 
 
 root.post('/history/:id', function(req, res) {
-  Model.memberclass.create({ MemberId: req.params.id, ClassnameId: req.body.ClassnameId})
+  Model.memberclass.create({ MemberId: req.params.id, ClassnameId: req.body.ClassnameId, date: req.body.date})
   .then( function(){
   res.redirect(`/member/history/${req.params.id}`);
   })
 });
+
+
 
 root.get('/history/delete/:id', function(req, res){
     Model.member.destroy({where: {id : req.params.id}})
