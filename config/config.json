@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "anggraito",
+    "password": "bnm",
+    "database": "datafitness",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "test": {
+    "username": "anggraito",
+    "password": "bnm",
+    "database": "datafitness",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "anggraito",
+    "password": "bnm",
+    "database": "datafitness",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

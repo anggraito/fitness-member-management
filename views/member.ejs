@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MEMBER PAGE</title>
+  </head>
+  <body>
+  <center>
+    <h2>MEMBER LIST</h2>
+    <br>
+    <br>
+    <a href="/member/add"><button type="submit"> ADD NEW MEMBER </button></a>
+    <br>
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Member Name</th>
+        <th>ID KTP</th>
+        <th>Address</th>
+        <th>Telpon Number</th>
+        <th>Kuota</th>
+        <th>Add Class</th>
+        <th colspan='2'>Actions</th>
+      </tr>
+      <% data_member.forEach((member, index)=>{%>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= member.name %></td>
+        <td><%= member.ktp %></td>
+        <td><%= member.address %></td>
+        <td><%= member.telp %></td>
+        <td><%= member.kuota %></td>
+        <td><a href="/member/history/<%= member.id %>">Add Class</a></td>
+        <td><a href="/member/edit/<%= member.id %>">EDIT</a></td>
+        <td><a href="/member/delete/<%= member.id %>">DELETE</a></td>
+      </tr>
+      <%})%>
+    </table>
+  </center>
+  </body>
+</html>

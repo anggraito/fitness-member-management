@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>EDIT MEMBER PAGE</title>
+  </head>
+  <body>
+  <center>
+    <h2>EDIT MEMBER LIST</h2>
+    <br>
+    <br>
+    <form action="/member/edit/<%= member_edit.id%>" method="POST">
+      <p>Name</p>
+      <input type="text" name="name" value="<%= member_edit.name%>">
+      <br>
+      <p>KTP</p>
+      <input type="text" name="ktp" value="<%= member_edit.ktp%>">
+      <br>
+      <p>Address</p>
+      <input type="text" name="address" value="<%= member_edit.address%>">
+      <br>
+      <p>Telepon Number</p>
+      <input type="tel" name="telp" value="<%= member_edit.telp%>">
+      <br>
+      <p>Plan</p>
+      <input type="text" name="kuota" value="<%= member_edit.kuota%>">
+      <br>
+      <br>
+      <button type="submit"> EDIT </button>
+    </form>
+  </center>
+  </body>
+</html>
