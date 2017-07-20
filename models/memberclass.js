@@ -2,7 +2,8 @@
 module.exports = function(sequelize, DataTypes) {
   var memberclass = sequelize.define('memberclass', {
     MemberId: DataTypes.INTEGER,
-    ClassnameId: DataTypes.INTEGER
+    ClassnameId: DataTypes.INTEGER,
+    date: DataTypes.DATE
   });
   memberclass.associate = (models) => {
     memberclass.belongsTo(models.member, {foreignKey:'MemberId'});
