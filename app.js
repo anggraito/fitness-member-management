@@ -21,7 +21,7 @@ app.use(session({
 //   res.send('hallo anggie and renata');
 // })
 
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 var Member = require('./models/member');

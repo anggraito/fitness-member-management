@@ -77,16 +77,11 @@ root.post('/history/:id', function(req, res) {
   })
 });
 
-
-
 root.get('/history/delete/:id', function(req, res){
-    Model.member.destroy({where: {id : req.params.id}})
-    .then( function(){
-      Model.memberclass.destroy({where: {MemberId: req.params.id}})
-      .then( function(){
-  res.redirect('/memberclass');
-      })
-    })
+  Model.memberclass.destroy({where: {MemberId: req.params.id}})
+  .then( function(){
+    res.redirect('/memberclass');
+  })
 });
 
 
