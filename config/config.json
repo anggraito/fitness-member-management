@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "anggraito",
-    "password": "bnm",
+    "username": "RenataClaraK",
+    "password": "12345",
     "database": "datafitness",
     "host": "localhost",
     "dialect": "postgres",
     "logging": false
   },
   "test": {
-    "username": "anggraito",
-    "password": "bnm",
+    "username": "RenataClaraK",
+    "password": "12345",
     "database": "datafitness",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
-    "username": "anggraito",
-    "password": "bnm",
+    "username": "RenataClaraK",
+    "password": "12345",
     "database": "datafitness",
     "host": "localhost",
     "dialect": "postgres"
