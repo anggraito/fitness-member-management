@@ -3,39 +3,134 @@
   <head>
     <meta charset="utf-8">
     <title>MEMBER PAGE</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo=27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+    <style>
+      .body{
+        font-family: 'Slabo 27px', serif;
+      }
+      table, td, th {
+        border: 1px solid #ddd;
+        text-align: left;}
+      table {
+        border-collapse: collapse;
+        width: 100%;}
+      th, td {
+        padding: 15px;}
+      .sidebar{
+        background-color: #c0d0e0;
+        height: 100vh;
+        padding: 0;
+        border-right: 1px solid #7aa8d6;
+      }
+      .logo{
+        width: 350px;
+        padding: 40px 20px;
+      }
+      .logo img{
+        width: 100%;
+        text-align: center;
+      }
+      .nameuser{
+        font-family: 'Slabo', serif;
+        font-size: 22px;
+        color: #23476b;
+        padding-top: 40px;
+        padding-left: 15%;
+        padding-bottom: 10px;
+      }
+      .menu-swipe ul{
+        padding-top: 5%;
+        padding-left: 0;
+      }
+      .menu-swipe ul li{
+        list-style: none;
+        padding: 15px 10px 15px 15%;
+        width: 100%;
+      }
+      .menu-swipe ul li:hover{
+        background-color: #fff;
+      }
+      .menu-swipe .bord{
+        border-bottom: 1px solid white;
+      }
+      .menu-swipe ul li a{
+        color: #23476b;
+      }
+      .menu-swipe ul li a:hover{
+        text-decoration: none;
+      }
+      .menu-footer{
+        position: absolute;
+        bottom: 0;
+      }
+      .menu-footer ul{
+        padding-left: 20px;
+      }
+      .menu-footer ul li{
+        list-style: none;
+      }
+      .menu-footer a{
+        color: #2d7ac2;
+      }
+      .content{
+        padding: 0 25px;
+      }
+      .content h2{
+        padding-top: 30px;
+        font-family: 'Sigmar One', cursive;
+      }
+      table {
+        margin-top: 20px;
+      }
+      td a{
+        color: #7aa8d6;
+      }
+      td a:hover{
+        text-decoration: none;
+      }
+
+    </style>
   </head>
   <body>
-  <center>
-    <h2>MEMBER LIST</h2>
-    <br>
-    <br>
-    <a href="/member/add"><button type="submit"> ADD NEW MEMBER </button></a>
-    <br>
-    <table>
-      <tr>
-        <th>No</th>
-        <th>Member Name</th>
-        <th>ID KTP</th>
-        <th>Address</th>
-        <th>Telpon Number</th>
-        <th>Kuota</th>
-        <th>Add Class</th>
-        <th colspan='2'>Actions</th>
-      </tr>
-      <% data_member.forEach((member, index)=>{%>
-      <tr>
-        <td><%= index + 1 %></td>
-        <td><%= member.name %></td>
-        <td><%= member.ktp %></td>
-        <td><%= member.address %></td>
-        <td><%= member.telp %></td>
-        <td><%= member.kuota %></td>
-        <td><a href="/member/history/<%= member.id %>">Add Class</a></td>
-        <td><a href="/member/edit/<%= member.id %>">EDIT</a></td>
-        <td><a href="/member/delete/<%= member.id %>">DELETE</a></td>
-      </tr>
-      <%})%>
-    </table>
-  </center>
+  <%- include layout/menu%>
+  <section class="col-xs-12 col-md-9 content">
+    <center>
+      <h2>MEMBER LIST</h2>
+      <br>
+      <br>
+      <a href="/member/add"><button class="btn btn-default "type="submit"> ADD NEW MEMBER </button></a>
+      <table>
+        <tr>
+          <th>No</th>
+          <th>Member Name</th>
+          <th>ID KTP</th>
+          <th>Address</th>
+          <th>Telpon Number</th>
+          <th>Kuota</th>
+          <th>Add Class</th>
+          <th colspan='2'>Actions</th>
+        </tr>
+        <% data_member.forEach((member, index)=>{%>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= member.name %></td>
+          <td><%= member.ktp %></td>
+          <td><%= member.address %></td>
+          <td><%= member.telp %></td>
+          <td><%= member.kuota %></td>
+          <td><a href="/member/history/<%= member.id %>">Add Class</a></td>
+          <td><a href="/member/edit/<%= member.id %>">EDIT</a></td>
+          <td><a href="/member/delete/<%= member.id %>">DELETE</a></td>
+        </tr>
+        <%})%>
+      </table>
+    </center>
+  </section>
   </body>
 </html>

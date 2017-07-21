@@ -23,7 +23,7 @@
         color: #fff;
       }
       .small-text{
-        font-size: 16px;
+        font-size: 20px;
         font-style: italic;
       }
       .bigtag{
@@ -36,29 +36,38 @@
         font-size: 80px;
         font-family: 'Lobster', cursive;
       }
-      .bigtag a.btn{
-        background: linear-gradient(45deg, rgba(242,202,142) 25%,rgba(169,142,242,0.65) 100%);
-        border-radius: 2px;
-        border:0;
-        /*box-shadow: 0px 2px 4px rgba(34,62,66,.25);*/
+      ul{
+        padding-left: 0;
+      }
+      ul li{
+        display: inline-block;
+        padding: 5px 15px;
+        border: 2px solid white;
+      }
+      ul li:hover{
+        background-color: #fff;
+      }
+      ul li a{
         color: #fff;
-        font: 18px 'Roboto';
-        letter-spacing: 1px;
-        padding: 16px 32px;
+        list-style: none;
         text-decoration: none;
-        text-transform: uppercase;
-        -webkit-transition: box-shadow 1s ease;
-        transition: box-shadow 1s ease;
+      }
+      ul li a:hover{
+        color: #2975c6;
+        text-decoration: none;
       }
     </style>
   </head>
   <body>
-
     <section class="home-head">
       <div class="bigtag">
-        <h1>Hello</h1>
-        <p class="small-text">Please login here to access this app</p>
-        <p><a class="btn btn-primary btn-lg" href="/login" role="button">LOGIN</a></p>
+        <h1>Hello, (username)</h1>
+        <p class="small-text">You are connected as (role) </p>
+        <ul>
+          <li><a href="/member">MEMBER</a></li>
+          <li><a href="/classname">SESSION CLASS</a></li>
+          <li><a href="/logout">LOGOUT</a></li>
+        </ul>
       </div>
 
     </section>

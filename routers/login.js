@@ -9,7 +9,7 @@ const hash = require('../helpers/hash');
 
 router.get('/', function(req,res){
     if(req.session.user){
-      res.redirect('/students')
+      res.redirect('/member')
     }else {
       res.render('login', {msg: ''})
     }

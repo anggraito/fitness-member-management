@@ -3,6 +3,15 @@ var router = express.Router();
 
 var Model = require('../models');
 
+router.use((req, res, next) => {
+  if (req.session.user){// undefined
+    next()
+  } else {
+    res.redirect('/login');
+  }
+});
+
+
 
 router.get('/', function(req, res){
   // console.log(Models.classf);

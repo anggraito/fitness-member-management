@@ -28,16 +28,20 @@ var Member = require('./models/member');
 var Classname = require('./models/classname');
 var User = require('./models/User');
 
+var home = require('./routers/home');
 var member = require('./routers/member');
 var login = require('./routers/login');
 var signup = require('./routers/signup');
 var classname = require('./routers/classname');
 var homepage = require('./routers/homepage');
 
-app.use('/member', member);
-app.use('/classname', classname);
+app.use('/', homepage);
 app.use('/signup', signup);
 app.use('/login', login);
-app.use('/', homepage);
+app.use('/home', home);
+app.use('/member', member);
+app.use('/classname', classname);
+
+
 
 app.listen(3500);
