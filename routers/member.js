@@ -55,29 +55,6 @@ root.get('/delete/:id', function(req, res){
   })
 })
 
-// root.get('/history/:id', function(req, res){
-//   Model.memberclass.findAll({
-//     where: {
-//       MemberId: req.params.id
-//     },
-//     include: [{all:true}]
-//   })
-//   .then(function (rows){
-//     Model.classname.findAll()
-//     .then (function (rows2){
-//       Model.member.findAll({
-//         where: {
-//           id: req.params.id
-//         },
-//         include: [{all:true}]
-//       })
-//       .then (function (rows3){
-//     res.render('memberclass', {data_memberclass: rows, data_classname: rows2, data_member: rows3});
-//   })
-//     })
-//   })
-//  });
-
  root.get('/history/:id', function(req, res){
    Model.member.findAll({
      where: {
@@ -112,39 +89,6 @@ root.post('/history/:id', function(req, res) {
   })
 });
 
-// root.post('/history/:id', function(req, res) {
-//   Model.memberclass.findAndCountAll({
-//     where: {
-//       MemberId:value
-//     }
-//   })
-//   .then( countDone => {
-//     Model.memberclass.findAndCountAll({
-//       where: {
-//         MemberId:value
-//       }
-//     })
-//   })
-//       .then( countKuota => {
-//         if (countKuota.kuota == countDone) {
-//           res.send('Kuota already finished');
-//         }else{
-//           Model.memberclass.create({ MemberId: req.params.id, ClassnameId: req.body.ClassnameId, date: req.body.date})
-//           .then( function(){
-//           res.redirect(`/member/history/${req.params.id}`);
-//           })
-//           }
-//       })
-// });
-
-
-// .catch(err => next(err));
-//
-// if (user.accessLevel > 10 && user.username !== "Boss") {
-//   throw new Error("You can't grant this user an access level above 10!")
-// }
-// })
-
 root.get('/history/edit/:id', function(req, res) {
 Model.memberclass.findAll({
   where: {
@@ -169,15 +113,14 @@ Model.memberclass.findAll({
 });
 
 root.post('/history/edit/:id', function(req, res) {
-  // Model.memberclass.update({ ClassnameId: req.body.ClassnameId, date: req.body.date},
-  //   {
-  //     where: {MemberId: req.params.id}
-  //   }
-  // )
-  // .then( function(){
-  // res.redirect(`/member/history/${req.params.id}`);
-  // })
-  console.log(req.body);
+  Model.memberclass.update({ ClassnameId: req.body.ClassnameId, date: req.body.date},
+    {
+      where: {MemberId: req.params.id}
+    }
+  )
+  .then( function(){
+  res.redirect(`/member/history/${req.params.id}`);
+  })
 });
 
 

@@ -15,10 +15,6 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "anggraito",
-    "password": "bnm",
-    "database": "datafitness",
-    "host": "localhost",
-    "dialect": "postgres"
+    "use_env_variable" : "DATABASE_URL"
   }
 }
