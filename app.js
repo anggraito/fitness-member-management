@@ -24,10 +24,6 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-var Member = require('./models/member');
-var Classname = require('./models/classname');
-var User = require('./models/User');
-
 var home = require('./routers/home');
 var member = require('./routers/member');
 var login = require('./routers/login');
@@ -44,4 +40,4 @@ app.use('/classname', classname);
 
 
 
-app.listen(process.env.PORT || 3500);
+app.listen(process.env.PORT ||3500);
