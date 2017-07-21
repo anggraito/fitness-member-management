@@ -15,13 +15,13 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {}
-}))
+}));
 
 // app.get('/', function(req, res){
 //   res.send('hallo anggie and renata');
 // })
 
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 var Member = require('./models/member');
@@ -40,4 +40,4 @@ app.use('/signup', signup);
 app.use('/login', login);
 app.use('/', homepage);
 
-app.listen(3500);
+app.listen(5012);

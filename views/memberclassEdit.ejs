@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>EDIT Member and Class</title>
+  </head>
+  <body>
+  <center>
+    <h2>EDIT Member and Class PAGE</h2>
+    <br>
+    <br>
+    <form action="/member/history/edit/<%= data_member[0].id%>" method="POST">
+      <p>Name</p>
+      <%= data_member[0].name%>
+      <br>
+      <p>Classname</p>
+      <select name="ClassnameId">
+        <option value="<%= data_memberclass[0].ClassnameId %>" selected> <%= data_memberclass[0].classname.name %> </option>
+        <% data_classname.forEach ( cont => { %>
+        <option value ="<%= cont.id%>"> <%= cont.name %> </option>
+        <% }) %>
+      </select>
+      <br>
+      <p>Setting Date :</p>
+      <input type="date" name="date" value="<%= data_memberclass[0].date %> ">
+      <br>
+      <button type="submit"> SAVE </button>
+    </form>
+  </center>
+  </body>
+</html>

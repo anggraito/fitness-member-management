@@ -18,7 +18,7 @@
       <% }) %>
     </select>
     <p>Setting Date :</p>
-    <input type="date" name="date" value="">
+    <input type="date" name="date" value="<%= data_memberclass.date %> ">
     <br>
     <br>
     <button type="submit">ADD NEW SESSIONS</button>
@@ -28,14 +28,20 @@
   <table>
     <tr>
       <th>No.</th>
+      <th> ID </th>
       <th>Fitness Session</th>
       <th>Schedule </th>
+      <th>Action</th>
     </tr>
     <% data_memberclass.forEach((c, index) =>{%>
     <tr>
       <td><%= index + 1 %></td>
+      <td><%= c.id %></td>
       <td><%= c.classname.name %></td>
       <td><%= c.date %></td>
+      <td><a href="/member/history/edit/<%= c.id %>">EDIT</a>
+      <td><a href="/member/history/delete/<%= c.id %>">DELETE</a></td>
+      </td>
     </tr>
     <%})%>
   </table>
